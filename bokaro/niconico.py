@@ -5,7 +5,7 @@ from time import time, localtime, asctime
 
 workspace = os.path.split(os.path.realpath(__file__))[0]
 requestHeaders = {'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.62 Safari/537.36'}
-proxies = { "http": "http://127.0.0.1:1080", "https": "http://127.0.0.1:1080", } 
+proxies = { "http": "http://127.0.0.1:7890", "https": "http://127.0.0.1:7890", } 
 #VOCALOID神話入り
 shinwaUrl = 'https://www.nicovideo.jp/tag/VOCALOID%E7%A5%9E%E8%A9%B1%E5%85%A5%E3%82%8A?page={}&sort=h&order=d'
 #VOCALOID伝説入り
@@ -70,6 +70,6 @@ def obtainNicoNicoData(MDFileName, ws, url):
             mdFile.close()
             sys.exit()
 
-# obtainNicoNicoData('densetsu.md', workspace, densetsuUrl)
-    
+obtainNicoNicoData('densetsu.md', workspace, densetsuUrl)
+obtainNicoNicoData('dendo.md', workspace, dendoUrl)
 obtainNicoNicoData('shinwa.md', workspace, shinwaUrl)
